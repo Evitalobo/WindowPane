@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         float moveForwardBack = Input.GetAxis("Vertical") * moveSpeed;
         float moveToSide = Input.GetAxis("Horizontal") * moveSpeed;
         moveForwardBack *= Time.deltaTime;
