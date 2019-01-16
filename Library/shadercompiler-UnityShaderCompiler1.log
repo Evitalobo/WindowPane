@@ -172,3 +172,4 @@ Cmd: disassembleShader
   api=14 insize=535 outsize=487 ok=1
 Cmd: initializeCompiler
 Cmd: initializeCompiler
+Cmd: initializeCompiler
