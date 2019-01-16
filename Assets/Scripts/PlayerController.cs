@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
-        dialogueUI.text = "This room seems like a flipped version of the room in my dream. Almost all the furniture in my room was in the dream except for the TV and the cat. It's strange how your mind builds dreams based off of your perception of reality. What really is real?";
+        dialogueUI.text = "Lately I've been having nightmares where I've been trapped inside my house and see figures and shapes that morph into each other.";
 
     }
 	
