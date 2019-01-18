@@ -24,6 +24,7 @@ public class Pickups : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        state = new Item();
     }
 	
 	// Update is called once per frame

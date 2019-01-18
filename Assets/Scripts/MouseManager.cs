@@ -13,6 +13,7 @@ public class MouseManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Is the mouse over a UI object?
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -24,8 +25,14 @@ public class MouseManager : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            GameObject ourHitObject = hitInfo.collider.transform.parent.gameObject;
-            //Debug.Log("raycast hit something: " + hitInfo.collider.transform.parent.name);
+            GameObject ourHitObject;
+            if (hitInfo.collider.transform.parent != null) {
+                ourHitObject = hitInfo.collider.transform.parent.gameObject;
+            } else
+            {
+                ourHitObject = hitInfo.collider.transform.gameObject;
+            }
+            Debug.Log("raycast hit something: " + ourHitObject.name);
 
             if (ourHitObject.GetComponent<Item>() != null)
             {
@@ -38,6 +45,10 @@ public class MouseManager : MonoBehaviour {
 
     void mouseOverItem(GameObject ourHitObject)
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Trying to interact with " + ourHitObject.name);
+            ourHitObject.GetComponent<Item>().interact();
+        }
     }
 }

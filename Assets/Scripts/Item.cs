@@ -19,4 +19,9 @@ public class Item : MonoBehaviour {
 	void Update () {
 
 	}
+
+    public void interact()
+    {
+        Destroy(this);
+    }
 }
