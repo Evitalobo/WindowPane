@@ -61,7 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ClassManager.cs" />
     <Compile Include="Assets\Scripts\DoorOpen.cs" />
+    <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Item Scripts\Book.cs" />
+    <Compile Include="Assets\Scripts\Item Scripts\Flashlight.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\MouseCam.cs" />
     <Compile Include="Assets\Scripts\MouseManager.cs" />

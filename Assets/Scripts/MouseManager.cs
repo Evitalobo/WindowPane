@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+// This class will know what the mouse is pointing at and when it is pressed.
 public class MouseManager : MonoBehaviour {
 
 	// Use this for initialization
@@ -32,7 +34,7 @@ public class MouseManager : MonoBehaviour {
             {
                 ourHitObject = hitInfo.collider.transform.gameObject;
             }
-            Debug.Log("raycast hit something: " + ourHitObject.name);
+            //Debug.Log("raycast hit something: " + ourHitObject.name);
 
             if (ourHitObject.GetComponent<Item>() != null)
             {

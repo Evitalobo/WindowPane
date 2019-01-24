@@ -20,8 +20,10 @@ public class Item : MonoBehaviour {
 
 	}
 
-    public void interact()
+    // This method can be overridden by a class that extends the Item class
+    public virtual void interact()
     {
-        Destroy(this);
+        Debug.Log("Using item interact");
+        Destroy(this.gameObject);
     }
 }
