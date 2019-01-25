@@ -19,7 +19,33 @@ public class Inventory : MonoBehaviour
             mItemNames[i].text = "None";
         }
     }
-
+    private void OnGUI()
+    {
+        Event e = Event.current;
+        if (e.isKey)
+        {
+            switch (e.keyCode)
+            {
+                case KeyCode.Alpha1:
+                    removeFromInventory(0);
+                    break;
+                case KeyCode.Alpha2:
+                    removeFromInventory(1);
+                    break;
+                case KeyCode.Alpha3:
+                    removeFromInventory(2);
+                    break;
+                case KeyCode.Alpha4:
+                    removeFromInventory(3);
+                    break;
+                case KeyCode.Alpha5:
+                    removeFromInventory(4);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -42,7 +68,7 @@ public class Inventory : MonoBehaviour
 
     public void removeFromInventory(int index)
     {
-        if (index < 0 || index >= mInventorySize)
+        if (index < 0 || index >= mInventorySize || mItems[index] == null)
         {
             return;
         }
@@ -57,6 +83,18 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < mInventorySize; i++)
         {
             if (mItems[i] == item)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean inventoryHas(string name)
+    {
+        for (int i = 0; i < mInventorySize; i++)
+        {
+            if (mItemNames[i].text.Equals(name))
             {
                 return true;
             }

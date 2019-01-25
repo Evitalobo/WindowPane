@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flashlight : Item
+public class Toilet : Item
 {
 
     public ClassManager mClassManager;
@@ -20,7 +20,12 @@ public class Flashlight : Item
 
     public override void interact()
     {
-        mClassManager.addToInventory(this);
-        
+        if (mClassManager.inventoryHas("flashlight"))
+        {
+            Debug.Log("Found something");
+        } else
+        {
+            Debug.Log("Just a toilet");
+        }
     }
 }

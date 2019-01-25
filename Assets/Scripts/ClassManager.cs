@@ -21,4 +21,9 @@ public class ClassManager : MonoBehaviour
     {
         mInventory.addToInventory(item);
     }
+
+    public System.Boolean inventoryHas(string name)
+    {
+        return mInventory.inventoryHas(name);
+    }
 }

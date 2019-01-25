@@ -27,18 +27,15 @@ public class MouseManager : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            GameObject ourHitObject;
-            if (hitInfo.collider.transform.parent != null) {
-                ourHitObject = hitInfo.collider.transform.parent.gameObject;
-            } else
-            {
-                ourHitObject = hitInfo.collider.transform.gameObject;
-            }
-            //Debug.Log("raycast hit something: " + ourHitObject.name);
+            GameObject ourHitObject = hitInfo.collider.transform.gameObject;
 
+            //Debug.Log("raycast hit something: " + ourHitObject.name);
             if (ourHitObject.GetComponent<Item>() != null)
             {
-                mouseOverItem(ourHitObject);
+                mouseOverItem(ourHitObject.GetComponent<Item>());
+            } else if (ourHitObject.GetComponentInParent<Item>() != null)
+            {
+                mouseOverItem(ourHitObject.GetComponentInParent<Item>());
             }
 
         }
@@ -51,6 +48,14 @@ public class MouseManager : MonoBehaviour {
         {
             Debug.Log("Trying to interact with " + ourHitObject.name);
             ourHitObject.GetComponent<Item>().interact();
+        }
+    }
+
+    void mouseOverItem(Item item)
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            item.interact();
         }
     }
 }

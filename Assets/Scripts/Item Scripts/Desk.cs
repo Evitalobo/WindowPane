@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flashlight : Item
+public class Desk : Item
 {
-
-    public ClassManager mClassManager;
+    public string deskNeeds;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,12 @@ public class Flashlight : Item
 
     public override void interact()
     {
-        mClassManager.addToInventory(this);
-        
+        if (mClassManager.inventoryHas(deskNeeds))
+        {
+            Debug.Log("Opened desk");
+        } else
+        {
+            Debug.Log("I think this is locked");
+        }
     }
 }

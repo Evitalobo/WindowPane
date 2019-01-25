@@ -10,6 +10,7 @@ public class Item : MonoBehaviour {
     public bool water = false;
     public bool sink = false;
     public Text dialogueUI;
+    public ClassManager mClassManager;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,6 @@ public class Item : MonoBehaviour {
     public virtual void interact()
     {
         Debug.Log("Using item interact");
-        Destroy(this.gameObject);
+        mClassManager.addToInventory(this);
     }
 }
