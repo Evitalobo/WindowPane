@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb3c56b23035674bbd7fa8c64e326d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.80405
+      value: -29.04
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb3c56b23035674bbd7fa8c64e326d6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1382,6 +1382,28 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2000000, guid: 6721df1a49ece465ba1e812f684367b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6721df1a49ece465ba1e812f684367b7, type: 3}
+--- !u!1 &825990663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 17ee2bc4401b44f29a95909e4fe1656d,
+    type: 3}
+  m_PrefabInstance: {fileID: 649093710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &825990664
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825990663}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &855348698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6b4243d2d75eaa844981dea88afc6469,
@@ -2586,7 +2608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 18}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1694533409
@@ -2687,6 +2709,8 @@ MonoBehaviour:
   moveSpeed: 15
   dialogueUI: {fileID: 376527700}
   trip: 0
+  tripMovement: 0
+  cycleCounter: 0
 --- !u!54 &1699011613
 Rigidbody:
   m_ObjectHideFlags: 0
