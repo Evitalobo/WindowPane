@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -391,6 +391,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &144271413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144271407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dcd581ab8550a47ac3e3edc40e68f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 376527700}
+  mClassManager: {fileID: 1101888077}
+  mDialogueText: '"God damn I fucking love water!"'
+  mTrippingDialogueText: 
+  flashlight: 0
+  water: 0
+  sink: 0
+  Sink: 0
+  glass: 0
+  potency: 2
+--- !u!136 &144271414
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144271407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.54
+  m_Height: 6.42
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.0000004768373, z: 1.6882218}
 --- !u!1 &188093835
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb3c56b23035674bbd7fa8c64e326d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.302149
+      value: -12.26
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb3c56b23035674bbd7fa8c64e326d6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1009,6 +1046,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &529121237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529121233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 0}
+  mClassManager: {fileID: 1101888077}
+  mDialogueText: 
+  mTrippingDialogueText: 
+  flashlight: 0
+  water: 0
+  sink: 0
+  Sink: 0
+  glass: 0
 --- !u!1 &627012764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1239,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.122826, y: 2.1470466, z: 4.039372}
   m_Center: {x: 0, y: -0.073523, z: 2.019686}
+--- !u!114 &662134475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662134468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 376527700}
+  mClassManager: {fileID: 0}
+  mDialogueText: Woooohooo! Fridge!  Keep killing it fridge.  Don't kill me though...
+    please!
+  mTrippingDialogueText: 
+  flashlight: 0
+  water: 0
+  sink: 0
+  Sink: 0
+  glass: 0
 --- !u!1 &753751155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,12 +1371,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mTakeable: 1
+  mDialogueUI: {fileID: 376527700}
+  mClassManager: {fileID: 1101888077}
+  mDialogueText: 'Keys!?!??!?!?! '
+  mTrippingDialogueText: 
   flashlight: 0
-  glass: 0
   water: 0
   sink: 0
-  dialogueUI: {fileID: 0}
-  mClassManager: {fileID: 1101888077}
+  Sink: 0
+  glass: 0
 --- !u!135 &767552500
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1440,6 +1526,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 6b4243d2d75eaa844981dea88afc6469, type: 3}
+--- !u!114 &855348705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855348698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dcd581ab8550a47ac3e3edc40e68f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 0}
+  mClassManager: {fileID: 1101888077}
+  mDialogueText: 
+  mTrippingDialogueText: 
+  flashlight: 0
+  water: 0
+  sink: 0
+  Sink: 0
+  glass: 0
+  potency: 3
 --- !u!1 &883582984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mMouseManager: {fileID: 110481721}
   mInventory: {fileID: 1550224379}
+  mPlayerCapsule: {fileID: 1699011610}
 --- !u!1 &1112906983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,8 +2818,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   dialogueUI: {fileID: 376527700}
-  trip: 0
-  tripMovement: 0
+  mTrip: 0
+  mTripMovement: 0
+  mTripAmount: 0
+  mTripThreshold: 10
   cycleCounter: 0
 --- !u!54 &1699011613
 Rigidbody:
@@ -2813,12 +2925,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 0}
+  mClassManager: {fileID: 0}
+  mDialogueText: 
+  mTrippingDialogueText: 
   flashlight: 0
-  glass: 0
   water: 0
   sink: 0
-  dialogueUI: {fileID: 376527700}
-  mClassManager: {fileID: 0}
+  Sink: 0
+  glass: 0
 --- !u!1 &1714795352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100026, guid: 6721df1a49ece465ba1e812f684367b7,
@@ -2896,6 +3012,54 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1896092586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896092582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 0}
+  mClassManager: {fileID: 0}
+  mDialogueText: You know what you did
+  mTrippingDialogueText: 
+  flashlight: 0
+  water: 0
+  sink: 0
+  Sink: 0
+  glass: 0
+--- !u!65 &1896092587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896092582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.7, y: 6.38, z: 17.62}
+  m_Center: {x: 6.92, y: 0, z: 10.01}
+--- !u!65 &1896092588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896092582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.34, y: 6.09, z: 5.79}
+  m_Center: {x: 1.27, y: 0.15, z: -0.36}
 --- !u!1 &1912224142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100020, guid: 6721df1a49ece465ba1e812f684367b7,
@@ -3043,6 +3207,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1977135415
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977135409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.733865
+  m_Center: {x: -0.87611896, y: -0.4958931, z: 1.5911304}
+--- !u!114 &1977135416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977135409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 376527700}
+  mClassManager: {fileID: 1101888077}
+  mDialogueText: "No way, this is commonly known as palmate maple,[3] Japanese maple[4]
+    or smooth Japanese-maple[5] (Japanese: irohamomiji, \u30A4\u30ED\u30CF\u30E2\u30DF\u30B8,
+    or momiji, \u7D05\u8449), is a species of woody plant native to Japan, Korea,
+    China, eastern Mongolia, and southeast Russia. Many different cultivars of this
+    maple have been selected and they are grown worldwide for their large variety
+    of attractive forms, leaf shapes, and spectacular colors.  "
+  mTrippingDialogueText: 
+  flashlight: 0
+  water: 0
+  sink: 0
+  Sink: 0
+  glass: 0
 --- !u!1 &1983745987
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,7 +81,7 @@ public class Pickups : MonoBehaviour {
             }
             else
             {
-                if(player.trip == false)
+                if(player.mTrip == false)
                 {
                     dialogueUI.text = "I could drink the water... \n <b>Drink the water? Press the enter/return key to drink</b>";
                     if (Input.GetButtonDown("Submit"))

@@ -11,14 +11,17 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 15.0f;
     public Text dialogueUI;
-    public bool trip = false;
-    public bool tripMovement = false;
+    public bool mTrip = false;
+    public bool mTripMovement = false;
+    public int mTripAmount;
+    public int mTripThreshold = 10;
     public float cycleCounter = 0;
     public Timer timer = new System.Timers.Timer();
 
     // Use this for initialization
     void Start()
     {
+        mTripAmount = 0;
         Cursor.lockState = CursorLockMode.Locked;
         dialogueUI.text = "Lately I've been having nightmares where I've been trapped inside my house and see figures and shapes that morph into each other.";
 
@@ -30,7 +33,7 @@ public class PlayerController : MonoBehaviour
         cycleCounter++;
         float moveForwardBack = Input.GetAxis("Vertical") * moveSpeed;
         float moveToSide = Input.GetAxis("Horizontal") * moveSpeed;
-        if (tripMovement)
+        if (mTripMovement)
         {
             moveForwardBack += (float)(0.15 * (Math.Sin((cycleCounter / 100) * Math.PI)));
             moveToSide += (float)(0.25 * ((Math.Sin((cycleCounter / 70) + 0.5) * Math.PI))); // after 20 seconds has elapsed from the time of trippage
@@ -52,12 +55,12 @@ public class PlayerController : MonoBehaviour
 
     public void Drink()
     {
-        if (trip == false)
+        if (mTrip == false)
         {
             Wait(timer); // the first time tripping happens/trip button is pressed
         }
-        trip = true;
-        Debug.Log("trip = " + trip);
+        mTrip = true;
+        Debug.Log("trip = " + mTrip);
     }
 
     public void Wait(Timer timer)
@@ -72,9 +75,30 @@ public class PlayerController : MonoBehaviour
 
     private void OnTimedEvent(object source, ElapsedEventArgs e)
     {
-        tripMovement = true;
+        mTripMovement = true;
         Debug.Log("timer complete");
         timer.Stop();
         timer.Dispose();
+    }
+
+    public void addTrip(int amount)
+    {
+        mTripAmount += amount;
+        if (mTripAmount > mTripThreshold)
+        {
+            mTrip = true;
+            mTripMovement = true;
+        }
+    }
+
+    public bool IsTripping()
+    {
+        if (mTrip)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
     }
 }

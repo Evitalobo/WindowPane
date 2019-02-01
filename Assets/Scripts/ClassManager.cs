@@ -10,6 +10,7 @@ public class ClassManager : MonoBehaviour
 
     public MouseManager mMouseManager;
     public Inventory mInventory;
+    public GameObject mPlayerCapsule;
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +26,15 @@ public class ClassManager : MonoBehaviour
     public System.Boolean inventoryHas(string name)
     {
         return mInventory.inventoryHas(name);
+    }
+
+    public void increaseTrip(int amount)
+    {
+        mPlayerCapsule.GetComponent<PlayerController>().addTrip(amount);
+    }
+
+    public bool IsTripping()
+    {
+        return mPlayerCapsule.GetComponent<PlayerController>().IsTripping();
     }
 }

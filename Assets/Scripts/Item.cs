@@ -5,15 +5,21 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
 
-    public bool flashlight = false;
-    public bool glass = false;
-    public bool water = false;
-    public bool sink = false;
-    public Text dialogueUI;
+    public bool mTakeable;
+    public Text mDialogueUI;
     public ClassManager mClassManager;
+    public string mDialogueText;
+    public string mTrippingDialogueText;
+    public bool flashlight;
+    public bool water;
+    public bool sink;
+    public bool Sink;
+    public bool glass;
 
 	// Use this for initialization
 	void Start () {
+        mClassManager = GameObject.Find("ClassManager").GetComponent<ClassManager>();
+        mDialogueUI = GameObject.Find("DialogueUI").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +31,17 @@ public class Item : MonoBehaviour {
     public virtual void interact()
     {
         Debug.Log("Using item interact");
-        mClassManager.addToInventory(this);
+        if (mClassManager.IsTripping())
+        {
+            mDialogueUI.text = mTrippingDialogueText;
+        } else
+        {
+            mDialogueUI.text = mDialogueText;
+        }
+        
+        if (mTakeable)
+        {
+            mClassManager.addToInventory(this);
+        }
     }
 }
