@@ -15,6 +15,8 @@ public class Item : MonoBehaviour {
     public bool sink;
     public bool Sink;
     public bool glass;
+    public bool MatchBox;
+    public bool pillContainer;
 
 	// Use this for initialization
 	void Start () {
