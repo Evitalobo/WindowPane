@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{F899A5EE-890A-9010-B4BE-145BAD951A72}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Item Scripts/Water.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory.cs">
     <Files>
-      <File FileName="Assets/Scripts/Item.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Item.cs" Line="18" Column="24" />
       <File FileName="Assets/Scripts/DoorOpen.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MouseCam.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MouseManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Pickups.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="4" />
-      <File FileName="Assets/Scripts/Item Scripts/Water.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Item Scripts/Water.cs" Line="8" Column="24" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
