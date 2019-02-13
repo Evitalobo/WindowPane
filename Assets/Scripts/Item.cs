@@ -12,6 +12,10 @@ public class Item : MonoBehaviour {
     public string mTrippingDialogueText;
     public string mFriendlyName;
 
+    public AudioClip interactSound;
+    private AudioSource source;
+    private float volume = 1.0f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +23,7 @@ public class Item : MonoBehaviour {
         {
             mFriendlyName = this.name;
         }
+        source = this.GetComponent<AudioSource>();
         mClassManager = GameObject.Find("ClassManager").GetComponent<ClassManager>();
         mDialogueUI = GameObject.Find("DialogueUI").GetComponent<Text>();
 	}
@@ -32,10 +37,10 @@ public class Item : MonoBehaviour {
     public virtual void interact()
     {
         Debug.Log("Using item interact");
-        if (mClassManager.IsTripping())
+        if (mClassManager.IsTripping() && mTrippingDialogueText != "")
         {
             mDialogueUI.text = mTrippingDialogueText;
-        } else
+        } else if (mDialogueText != "")
         {
             mDialogueUI.text = mDialogueText;
         }
@@ -43,6 +48,11 @@ public class Item : MonoBehaviour {
         if (mTakeable)
         {
             mClassManager.addToInventory(this);
+        }
+
+        if (interactSound != null)
+        {
+            source.PlayOneShot(interactSound, volume);
         }
     }
 }
