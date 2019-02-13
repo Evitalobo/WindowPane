@@ -13,6 +13,7 @@ public class Item : MonoBehaviour {
     public string mFriendlyName;
 
     public AudioClip interactSound;
+    public AudioClip trippingInteractSound;
     private AudioSource source;
     private float volume = 1.0f;
 
@@ -50,9 +51,12 @@ public class Item : MonoBehaviour {
             mClassManager.addToInventory(this);
         }
 
-        if (interactSound != null)
+        if (interactSound != null && !mClassManager.IsTripping())
         {
             source.PlayOneShot(interactSound, volume);
+        } else if (trippingInteractSound != null && mClassManager.IsTripping())
+        {
+            source.PlayOneShot(trippingInteractSound, volume);
         }
     }
 }

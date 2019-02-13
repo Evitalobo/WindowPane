@@ -333,6 +333,7 @@ MonoBehaviour:
   mTrippingDialogueText: 
   mFriendlyName: Glass
   interactSound: {fileID: 0}
+  trippingInteractSound: {fileID: 0}
 --- !u!4 &144271412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1cd621c41687dea43a927a7629ceec7e,
@@ -1178,6 +1179,7 @@ MonoBehaviour:
   mTrippingDialogueText: Now I can count how many balls I am tripping
   mFriendlyName: Pills
   interactSound: {fileID: 8300000, guid: a10e90dd317dc144799d5618e6605663, type: 3}
+  trippingInteractSound: {fileID: 0}
 --- !u!4 &529121236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: f51aa22e6c8094c4a871c84689f54ac0,
@@ -2069,6 +2071,7 @@ MonoBehaviour:
   mTrippingDialogueText: WWOooaaaAAAhh
   mFriendlyName: Sink
   interactSound: {fileID: 0}
+  trippingInteractSound: {fileID: 0}
   potency: 2
   mNeedGlass: 1
   noGlass: I can't believe I forgot the glass god damnit I am such an idiot
@@ -2774,6 +2777,141 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d26934306a24f598042165cd035f79, type: 3}
+--- !u!1 &1350471260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 47b5fd20f8fb94524bb4a2ea22e75df0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405090118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1350471263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350471260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 0
+  mDialogueUI: {fileID: 0}
+  mClassManager: {fileID: 0}
+  mDialogueText: This clock is freaking me out!
+  mTrippingDialogueText: i AM YOUR MASTER
+  mFriendlyName: 
+  interactSound: {fileID: 8300000, guid: 01d21e6aeb422644eaaf6110395fed85, type: 3}
+  trippingInteractSound: {fileID: 0}
+--- !u!65 &1350471264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350471260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.91, y: 33.63, z: 6.3}
+  m_Center: {x: 0, y: 9.52, z: 0}
+--- !u!82 &1350471265
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350471260}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1402344916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2953,6 +3091,7 @@ MonoBehaviour:
   mTrippingDialogueText: 
   mFriendlyName: Matches
   interactSound: {fileID: 0}
+  trippingInteractSound: {fileID: 0}
 --- !u!1 &1449763320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,6 +3977,7 @@ MonoBehaviour:
   mTrippingDialogueText: 
   mFriendlyName: 
   interactSound: {fileID: 0}
+  trippingInteractSound: {fileID: 0}
 --- !u!1 &1714795352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100026, guid: 6721df1a49ece465ba1e812f684367b7,
