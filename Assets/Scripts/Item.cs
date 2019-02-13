@@ -10,16 +10,15 @@ public class Item : MonoBehaviour {
     public ClassManager mClassManager;
     public string mDialogueText;
     public string mTrippingDialogueText;
-    public bool flashlight;
-    public bool water;
-    public bool sink;
-    public bool Sink;
-    public bool glass;
-    public bool MatchBox;
-    public bool pillContainer;
+    public string mFriendlyName;
+
 
 	// Use this for initialization
 	void Start () {
+        if (mFriendlyName == "")
+        {
+            mFriendlyName = this.name;
+        }
         mClassManager = GameObject.Find("ClassManager").GetComponent<ClassManager>();
         mDialogueUI = GameObject.Find("DialogueUI").GetComponent<Text>();
 	}

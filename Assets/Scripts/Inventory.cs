@@ -54,12 +54,17 @@ public class Inventory : MonoBehaviour
 
     public void addToInventory(Item item)
     {
+        if (inventoryHas(item.mFriendlyName))
+        {
+            Debug.Log("I already have one of these");
+            return;
+        }
         for (int i = 0; i < mInventorySize; i++)
         {
             if (mItems[i] == null)
             {
                 mItems[i] = item;
-                mItemNames[i].text = item.name;
+                mItemNames[i].text = item.mFriendlyName;
                 return;
             }
         }

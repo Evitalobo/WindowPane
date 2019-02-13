@@ -27,9 +27,9 @@ public class MouseManager : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            GameObject ourHitObject = hitInfo.collider.transform.gameObject;
+            GameObject ourHitObject = hitInfo.transform.gameObject;
 
-            //Debug.Log("raycast hit something: " + ourHitObject.name);
+            // Debug.Log("raycast hit something: " + ourHitObject.name);
             if (ourHitObject.GetComponent<Item>() != null)
             {
                 mouseOverItem(ourHitObject.GetComponent<Item>());

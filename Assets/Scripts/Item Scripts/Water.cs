@@ -8,6 +8,13 @@ public class Water : Item
 {
 
     public int potency;
+    public bool mNeedGlass;
+    public string noGlass;
+    public string noPills;
+
+    // These are what will be checked for in the inventory.
+    string mGlassName = "Glass";
+    string mPillsName = "Pills";
 
 
     // Start is called before the first frame update
@@ -32,7 +39,16 @@ public class Water : Item
         } else
         {
             mDialogueUI.text = mDialogueText;
+            if (mNeedGlass && !mClassManager.inventoryHas(mGlassName))
+            {
+                mDialogueUI.text += noGlass;
+            } else if (!mClassManager.inventoryHas(mPillsName))
+            {
+                mDialogueUI.text += noPills;
+            }
         }
-        mClassManager.increaseTrip(potency);
+        if (!mNeedGlass || mClassManager.inventoryHas(mGlassName)) {
+            mClassManager.increaseTrip(potency);
+        }
     }
 }

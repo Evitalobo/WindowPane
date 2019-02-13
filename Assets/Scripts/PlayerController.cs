@@ -15,8 +15,11 @@ public class PlayerController : MonoBehaviour
     public bool mTripMovement = false;
     public int mTripAmount;
     public int mTripThreshold = 10;
+    public int mTripCap = 30;
     public float cycleCounter = 0;
     public Timer timer = new System.Timers.Timer();
+    float mLastTripStart;
+    float mLastDecrease = 0;
 
     // Use this for initialization
     void Start()
@@ -42,14 +45,24 @@ public class PlayerController : MonoBehaviour
         moveForwardBack *= Time.deltaTime;
         moveToSide *= Time.deltaTime;
         transform.Translate(moveToSide, 0, moveForwardBack);
+
+        // Remove 1 trip point every five seconds starting 20 seconds after you start tripping
+        if (Time.time - mLastTripStart > 20)
+        {
+            if (Math.Floor(Time.time) % 5 == 0 && mTripAmount > 0 && mLastDecrease != Math.Floor(Time.time))
+            {
+                mLastDecrease = (float) Math.Floor(Time.time);
+                addTrip(-1);
+            }
+        }
+
         if (Input.GetKeyDown("escape"))
         {
             Cursor.lockState = CursorLockMode.None;
         }
-
-        if (Input.GetKeyDown("t"))
+        if (Input.GetMouseButtonDown(0) && Cursor.lockState != CursorLockMode.Locked)
         {
-            Drink(); //just a test button to check if the timer worked
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -83,22 +96,46 @@ public class PlayerController : MonoBehaviour
 
     public void addTrip(int amount)
     {
-        mTripAmount += amount;
+        Debug.Log("mTripAmount: " + mTripAmount + " amount adding: " + amount);
+        if (mTripAmount == 0 && amount < 0)
+        {
+            Debug.Log("Can't remove trip amount from 0");
+            return;
+        }
+        if (mTripAmount < mTripCap) {
+            mTripAmount += amount;
+        }
         if (mTripAmount > mTripThreshold)
         {
-            mTrip = true;
-            mTripMovement = true;
+            if (!mTrip)
+            {
+                startTripping();
+            }
+        } else
+        {
+            if (mTrip)
+            {
+                stopTripping();
+            }
         }
+    }
+
+    public void startTripping()
+    {
+        mTrip = true;
+        mTripMovement = true;
+        mLastTripStart = (float) Math.Floor(Time.time);
+        Debug.Log("Starting to trip at time: " + mLastTripStart);
+    }
+
+    public void stopTripping()
+    {
+        mTrip = false;
+        mTripMovement = false;
     }
 
     public bool IsTripping()
     {
-        if (mTrip)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
+        return mTrip;
     }
 }

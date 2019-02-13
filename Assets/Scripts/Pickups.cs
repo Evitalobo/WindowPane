@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Pickups : MonoBehaviour {
-    private PlayerController player;
+  /*  private PlayerController player;
     [SerializeField]
     [Tooltip("Camera used by player")]
     private new Camera camera;
@@ -97,5 +97,5 @@ public class Pickups : MonoBehaviour {
             }
         }
 
-    }
+    } */
 }
