@@ -62,19 +62,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ClassManager.cs" />
-    <Compile Include="Assets\Scripts\CustomLight.cs" />
-    <Compile Include="Assets\Scripts\DoorOpen.cs" />
+    <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\Book.cs" />
+    <Compile Include="Assets\Scripts\Item Scripts\Candle.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\Desk.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\Flashlight.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\Toilet.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\Water.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\Menu Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\MouseCam.cs" />
     <Compile Include="Assets\Scripts\MouseManager.cs" />
     <Compile Include="Assets\Scripts\Pickups.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\TripItem.cs" />
+    <Compile Include="Assets\Scripts\Trippy Scripts\CustomLight.cs" />
+    <Compile Include="Assets\Scripts\Trippy Scripts\Walls.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Sonic/OneDrive/Documents/GitHub/WindowPane/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

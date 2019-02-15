@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Item script
 public class Item : MonoBehaviour {
 
     public bool mTakeable;

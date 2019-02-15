@@ -125,6 +125,12 @@ public class PlayerController : MonoBehaviour
         mTrip = true;
         mTripMovement = true;
         mLastTripStart = (float) Math.Floor(Time.time);
+        GameObject[] trippyItems = GameObject.FindGameObjectsWithTag("Trippy");
+        Debug.Log("amount of trippy items: " + trippyItems.Length);
+        for (int i = 0; i < trippyItems.Length; i++)
+        {
+            trippyItems[i].GetComponent<TripItem>().startTrip();
+        }
         Debug.Log("Starting to trip at time: " + mLastTripStart);
     }
 
@@ -132,6 +138,12 @@ public class PlayerController : MonoBehaviour
     {
         mTrip = false;
         mTripMovement = false;
+        GameObject[] trippyItems = GameObject.FindGameObjectsWithTag("Trippy");
+        Debug.Log("amount of trippy items: " + trippyItems.Length);
+        for (int i = 0; i < trippyItems.Length; i++)
+        {
+            trippyItems[i].GetComponent<TripItem>().stopTrip();
+        }
     }
 
     public bool IsTripping()

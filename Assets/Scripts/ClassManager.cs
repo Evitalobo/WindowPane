@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // This class will have references to other classes and methods for them to communicate with one another.
 // This is so every class doesn't have to have a reference to every other class, they can all communicate
@@ -36,5 +37,12 @@ public class ClassManager : MonoBehaviour
     public bool IsTripping()
     {
         return mPlayerCapsule.GetComponent<PlayerController>().IsTripping();
+    }
+
+    public void endGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);        
+        
     }
 }
