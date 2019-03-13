@@ -12,6 +12,7 @@ public class ClassManager : MonoBehaviour
     public MouseManager mMouseManager;
     public Inventory mInventory;
     public GameObject mPlayerCapsule;
+    public PuzzleManager mPuzzleManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,9 @@ public class ClassManager : MonoBehaviour
         
     }
 
-    public void addToInventory(Item item)
+    public bool addToInventory(Item item)
     {
-        mInventory.addToInventory(item);
+        return mInventory.addToInventory(item);
     }
 
     public System.Boolean inventoryHas(string name)
@@ -44,5 +45,15 @@ public class ClassManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);        
         
+    }
+
+    public bool AllWordsFound()
+    {
+        return mPuzzleManager.AllWordsFound();
+    }
+
+    public void foundWord(int index)
+    {
+        mPuzzleManager.foundWord(index);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,21 +9,28 @@ public class Inventory : MonoBehaviour
 {
 
     Item[] mItems;
-    public Text[] mItemNames;
+    public String[] mItemNames;
+    public Image[] mItemImages;
     int mInventorySize = 5;
+    public Sprite mEmptyInventory;
+    public GameObject mInventoryUI;
+    public bool mCanDropItems = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        mInventoryUI.transform.position = new Vector3(Screen.width / 2 - (mInventoryUI.GetComponent<RectTransform>().rect.width /2), 6 * Screen.height / 7, 0);
         mItems = new Item[mInventorySize];
         for (int i = 0; i < mInventorySize; i++)
         {
-            mItemNames[i].text = "None";
+            mItemNames[i] = "None";
+            mItemImages[i].sprite = mEmptyInventory;
         }
     }
     private void OnGUI()
     {
         Event e = Event.current;
-        if (e.isKey)
+        if (e.isKey && mCanDropItems)
         {
             switch (e.keyCode)
             {
@@ -52,23 +60,29 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void addToInventory(Item item)
+    public bool addToInventory(Item item)
     {
         if (inventoryHas(item.mFriendlyName))
         {
             Debug.Log("I already have one of these");
-            return;
+            return false;
         }
         for (int i = 0; i < mInventorySize; i++)
         {
-            if (mItems[i] == null)
+            if (mItemNames[i] == "None")
             {
+                Debug.Log("Adding to an empty spot in the inventory");
                 mItems[i] = item;
-                mItemNames[i].text = item.mFriendlyName;
-                return;
+                mItemNames[i] = item.mFriendlyName;
+                Texture2D itemTexture = AssetPreview.GetAssetPreview(item.getPrefab());
+                Sprite newSprite = Sprite.Create(itemTexture, new Rect(0,0,128,128), new Vector2(0,0));
+                mItemImages[i].sprite = newSprite;
+                mItemImages[i].color = Color.white;
+                return true;
             }
         }
         Debug.Log("No room in inventory");
+        return false;
     }
 
     public void removeFromInventory(int index)
@@ -79,7 +93,8 @@ public class Inventory : MonoBehaviour
         }
         Debug.Log("Removing " + mItems[index].name + " from inventory");
         mItems[index] = null;
-        mItemNames[index].text = "None";
+        mItemNames[index] = "None";
+        mItemImages[index].sprite = mEmptyInventory;
     }
 
     // Not tested
@@ -99,7 +114,11 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < mInventorySize; i++)
         {
-            if (mItemNames[i].text.Equals(name))
+            if (mItemNames[i] == null)
+            {
+                continue;
+            }
+            if (mItemNames[i].Equals(name))
             {
                 return true;
             }

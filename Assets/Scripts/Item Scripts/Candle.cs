@@ -13,12 +13,20 @@ public class Candle : Item
     void Start()
     {
         mClassManager = GameObject.Find("ClassManager").GetComponent<ClassManager>();
-        mDialogueUI = GameObject.Find("DialogueUI").GetComponent<Text>();
+        mBubbleContainer = GameObject.Find("MainBubble");
+        mBubble = mBubbleContainer.GetComponentInChildren<Canvas>();
+        bubbleOrigin = GameObject.Find("BubbleOrigin").GetComponent<Transform>();
+        mDialogueUI = mBubble.transform.Find("Text").GetComponent<Text>();
+        candleLitText = "Alright, it's lit! Is there something... inside the wax?";
     }
 
     // Update is called once per frame
     void Update()
     {
+    	if (mCoolDown > 0)
+        {
+            mCoolDown--;
+        }
         if (lit)
         {
             if (Mathf.Floor(Time.time) % 2 == 0 && Mathf.Floor(Time.time) != lastShrinkTime && this.gameObject.transform.localScale.y > 0.2)
@@ -31,15 +39,31 @@ public class Candle : Item
 
     public override void interact()
     {
+    	if (mCoolDown != 0)
+        {
+            Debug.Log("Cooldown not ready");
+            return;
+        }
+        mCoolDown = 20;
+        if (mBubbleContainer.transform.position != this.transform.position) {
+            if(displayingMessage == true) {
+                displayBubble();
+            }
+        }
         if (mClassManager.inventoryHas("Matches"))
         {
+        	if(lit == false) {
+        		this.GetComponent<AudioSource>().Play();
+        	}
             mDialogueUI.text = candleLitText;
             lit = true;
             Destroy(this.GetComponent<Collider>());
+            displayBubble();
         }
         else
         {
-            mDialogueUI.text = "I need matches to light this";
+            mDialogueUI.text = "A candle? I need matches to light this.";
+            displayBubble();
         }
     }
 }

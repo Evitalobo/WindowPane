@@ -1,4 +1,4 @@
-﻿//LitLavaLampLandLobo 
+//LitLavaLampLandLobo 
 //Evita Lobo - Assignment 4
 //Otherwise known as L5
 //A shader adapted from the ShaderToy GLSL code translated into Unity HLSL code
@@ -176,7 +176,7 @@ Shader "Custom/LitLavaLampLandLobo"
                 //Colors
                  
                 float3 col1 = float3(0.1,0.1,0.4);
-                float3 col2 = float3(1.9,0.8,1.0 - r);
+                float3 col2 = float3(0.9,0.8,1.0 - r);
              
                 //Oscilate color1,2 in patterns
                 float3 fin = lerp(col1,col2,e);

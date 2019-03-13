@@ -21,24 +21,54 @@ public class Water : Item
     void Start()
     {
         mClassManager = GameObject.Find("ClassManager").GetComponent<ClassManager>();
-        mDialogueUI = GameObject.Find("DialogueUI").GetComponent<Text>();
+        mBubbleContainer = GameObject.Find("MainBubble");
+        mBubble = mBubbleContainer.GetComponentInChildren<Canvas>();
+        bubbleOrigin = GameObject.Find("BubbleOrigin").GetComponent<Transform>();
+        mDialogueUI = mBubble.transform.Find("Text").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (mCoolDown > 0)
+        {
+            mCoolDown--;
+        }
     }
 
     public override void interact()
     {
+        if (mCoolDown != 0)
+        {
+            Debug.Log("Cooldown not ready");
+            return;
+        }
+        mCoolDown = 20;
+        if (mBubbleContainer.transform.position != this.transform.position) {
+            if(displayingMessage == true) {
+                displayBubble();
+            }
+        }
         Debug.Log("Adding " + potency + " to trip amount");
+        if (interactSound != null && !mClassManager.IsTripping())
+        {
+            if (!mNeedGlass || mClassManager.inventoryHas(mGlassName)) {
+                source.PlayOneShot(interactSound, 0.5f);
+            }
+        } else if (trippingInteractSound != null && mClassManager.IsTripping())
+        {
+            if (!mNeedGlass || mClassManager.inventoryHas(mGlassName)) {
+                source.PlayOneShot(interactSound, 0.5f);
+            }
+        }
         if (mClassManager.IsTripping())
         {
             mDialogueUI.text = mTrippingDialogueText;
+            displayBubble();
         } else
         {
             mDialogueUI.text = mDialogueText;
+            displayBubble();
             if (mNeedGlass && !mClassManager.inventoryHas(mGlassName))
             {
                 mDialogueUI.text += noGlass;

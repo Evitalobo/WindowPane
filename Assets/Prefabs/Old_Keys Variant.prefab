@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!136 &1420621582
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295545564778788944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.4
+  m_Height: 8.61
+  m_Direction: 1
+  m_Center: {x: 3.02, y: -1.71, z: -3.24}
+--- !u!114 &1420621583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295545564778788944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896deae7feb5e1e4bb105528197aa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTakeable: 1
+  mDialogueUI: {fileID: 0}
+  mClassManager: {fileID: 0}
+  mDialogueText: Nice, keys!  Maybe these will unlock something
+  mTrippingDialogueText: WooaAAh keys!!
+  mFriendlyName: Keys
+  mPrefab: {fileID: 0}
+  mBubbleContainer: {fileID: 0}
+  mBubble: {fileID: 0}
+  bubbleOrigin: {fileID: 0}
+  interactSound: {fileID: 0}
+  trippingInteractSound: {fileID: 0}
+  source: {fileID: 0}
+  mAnimator: {fileID: 0}
+--- !u!1001 &295545564778823410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_Name
+      value: Old_Keys
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9626656
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.853195
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.650145
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.050000027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34d399082a5ffe24b9f536df4ea14652, type: 3}
+--- !u!1 &295545564778788944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 34d399082a5ffe24b9f536df4ea14652,
+    type: 3}
+  m_PrefabInstance: {fileID: 295545564778823410}
+  m_PrefabAsset: {fileID: 0}

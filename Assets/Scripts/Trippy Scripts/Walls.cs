@@ -23,7 +23,6 @@ public class Walls : TripItem
         Debug.Log("walls start trip");
         while (this.transform.localScale.y < 20)
         {
-            Debug.Log("Growing walls");
             this.transform.localScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y * 1.01f, this.transform.localScale.z);
 
         }

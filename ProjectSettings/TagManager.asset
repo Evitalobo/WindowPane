@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Trippy, Trip]
+  tags:
+  - Trippy
+  - Carpet
+  - Wood
+  - Tile
   layers:
   - Default
   - TransparentFX
