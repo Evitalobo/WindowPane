@@ -14,6 +14,8 @@ public class Item : MonoBehaviour {
     public string mFriendlyName;
     public GameObject mPrefab;
 
+    public TextAsset mInventoryIconBytes;
+
     public GameObject mBubbleContainer;
     public Canvas mBubble;
     public Transform bubbleOrigin;
@@ -21,7 +23,7 @@ public class Item : MonoBehaviour {
     public AudioClip interactSound;
     public AudioClip trippingInteractSound;
     public AudioSource source;
-    private float volume = 1.0f;
+    public float mVolume = 1.0f;
     public Animator mAnimator;
 
     public bool displayingMessage = false;
@@ -70,6 +72,12 @@ public class Item : MonoBehaviour {
         {
             mAnimator.Play("");
         }
+                
+        if (mBubbleContainer.transform.position != this.transform.position) {
+            if(displayingMessage == true) {
+                displayBubble();
+            }
+        }
 
         Debug.Log("Using item interact");
         if (mClassManager.IsTripping() && mTrippingDialogueText != "")
@@ -86,10 +94,10 @@ public class Item : MonoBehaviour {
 
         if (interactSound != null && !mClassManager.IsTripping())
         {
-            source.PlayOneShot(interactSound, volume);
+            source.PlayOneShot(interactSound, mVolume);
         } else if (trippingInteractSound != null && mClassManager.IsTripping())
         {
-            source.PlayOneShot(trippingInteractSound, volume);
+            source.PlayOneShot(trippingInteractSound, mVolume);
         }
 
         if (mTakeable)
@@ -105,11 +113,6 @@ public class Item : MonoBehaviour {
     public void displayBubble()
     {
         mBubbleContainer.transform.position = this.transform.position;
-        if (mBubbleContainer.transform.position != this.transform.position) {
-            if(displayingMessage == true) {
-                displayBubble();
-            }
-        }
         if (mBubble.enabled == false)
         {
             mBubble.enabled = true;
@@ -132,8 +135,11 @@ public class Item : MonoBehaviour {
         }
     }
 
-    public GameObject getPrefab()
+    public Texture2D getInventoryIcon()
     {
-        return mPrefab;
+        Debug.Log("Returning 2d texture");
+        Texture2D texture = new Texture2D(128, 128);
+        texture.LoadImage(mInventoryIconBytes.bytes);
+        return texture;
     }
 }

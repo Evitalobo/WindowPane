@@ -5,11 +5,10 @@ using UnityEngine;
 public class Toilet : Item
 {
 
-    public ClassManager mClassManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        mClassManager = GameObject.Find("ClassManager").GetComponent<ClassManager>();
     }
 
     // Update is called once per frame

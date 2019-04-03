@@ -64,6 +64,7 @@ public class Newspaper : FullScreenItem
         {
             if(displayingMessage == true){
                 Debug.Log("Closing message bubble");
+                displayBubble();
             } else {
                 Debug.Log("Opening image bubble");
                 //mBubble.transform.localScale = new Vector3(0.52933f, 0.52933f, 0.52933f);

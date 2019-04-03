@@ -45,15 +45,7 @@ public class Book : StoryItem
                 mDialogueUI.text = "I have noooooo idea what any of this means...";
                 displayBubble();
             }
-        } else if(checkState() == 1) {
-            if(mPlayer.GetComponent<PlayerController>().mTrip == false) {
-                mDialogueUI.text = "Why's there a law textbook here?";
-                displayBubble();
-            } else if(mPlayer.GetComponent<PlayerController>().mTrip == true) {
-                mDialogueUI.text = "I have noooooo idea what any of this means...";
-                displayBubble();
-            }
-        } else if(checkState() == 2) {
+        } else {
             if(mPlayer.GetComponent<PlayerController>().mTrip == false) {
                 mDialogueUI.text = "It is against the law to build a bomb... 15-50 years in prison... Why are there instructions on how to make a bomb in this?!";
                 setBook();

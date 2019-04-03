@@ -94,11 +94,6 @@ public class FullScreenItem : StoryItem
     public void displayBubble()
     {
         mBubbleContainer.transform.position = this.transform.position;
-        if (mBubbleContainer.transform.position != this.transform.position) {
-            if(displayingMessage == true) {
-                displayBubble();
-            }
-        }
         if (mBubble.enabled == false)
         {
             mBubble.enabled = true;

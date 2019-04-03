@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -74,10 +76,12 @@ public class Inventory : MonoBehaviour
                 Debug.Log("Adding to an empty spot in the inventory");
                 mItems[i] = item;
                 mItemNames[i] = item.mFriendlyName;
-                Texture2D itemTexture = AssetPreview.GetAssetPreview(item.getPrefab());
-                Sprite newSprite = Sprite.Create(itemTexture, new Rect(0,0,128,128), new Vector2(0,0));
+                Debug.Log("About to create sprite");
+
+                Sprite newSprite = Sprite.Create(item.getInventoryIcon(), new Rect(0, 0, 128, 128), new Vector2(0, 0));
                 mItemImages[i].sprite = newSprite;
                 mItemImages[i].color = Color.white;
+
                 return true;
             }
         }
