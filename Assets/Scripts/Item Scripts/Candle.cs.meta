@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8e30b451151042a4180b128d192cc503
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mDialogueUI: {instanceID: 0}
+  - mClassManager: {instanceID: 0}
+  - interactSound: {fileID: 8300000, guid: 2e2162d1e05539d4cbfe7c0db0b841a6, type: 3}
+  - trippingInteractSound: {instanceID: 0}
+  - source: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

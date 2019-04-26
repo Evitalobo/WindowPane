@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 0db22e100c005904ba7df0634f9fa0eb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Cylinder_002
+    100012: //RootNode
+    100014: petal1
+    100016: petal2
+    100018: petal2_001
+    100020: petal2_002
+    100022: petal2_003
+    100024: petal2_004
+    100026: petal2_005
+    100028: petal2_006
+    100030: Sphere_001
+    100032: spine1
+    100034: spine2
+    100036: spine3
+    100038: spine4
+    100040: spine5
+    100042: spine5_005
+    100044: spine5_007
+    100046: spine5_008
+    100048: spine5_009
+    100050: spine5_010
+    100052: spine5_011
+    100054: spine5_012
+    100056: spine5_013
+    400000: Armature
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Cylinder_002
+    400012: //RootNode
+    400014: petal1
+    400016: petal2
+    400018: petal2_001
+    400020: petal2_002
+    400022: petal2_003
+    400024: petal2_004
+    400026: petal2_005
+    400028: petal2_006
+    400030: Sphere_001
+    400032: spine1
+    400034: spine2
+    400036: spine3
+    400038: spine4
+    400040: spine5
+    400042: spine5_005
+    400044: spine5_007
+    400046: spine5_008
+    400048: spine5_009
+    400050: spine5_010
+    400052: spine5_011
+    400054: spine5_012
+    400056: spine5_013
+    2100000: Material_002
+    2100002: Material_013
+    2100004: Material_014
+    2100006: Material_011
+    2100008: Material_001
+    2100010: Material_003
+    2300000: Cylinder_002
+    3300000: Cylinder_002
+    4300000: Sphere_001
+    4300002: Cylinder_002
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Sphere_001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
